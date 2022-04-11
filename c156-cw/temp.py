@@ -1,0 +1,17 @@
+from tkinter import *
+from PIL import ImageTk, Image
+root=Tk()
+root.title("Dice Classic Gamez")
+root.geometry("600x400")
+root.configure(background="darkblue")
+player1=Label(root,text="Player 1 (You)",bg="darkgreen",fg="white")
+player2=Label(root,text="Player 2 (Your Freind)",bg="darkgreen",fg="white")
+player1_score=Label(root,text="Score",bg="darkgreen",fg="white")
+player2_score=Label(root,text="Score",bg="darkgreen",fg="white")
+lbl_random_dice=Label(root,text="-:-",bg="darkorange",fg="white")
+player1.place(relx=0.1,rely=0.4,anchor=CENTER)
+player2.place(relx=0.9,rely=0.4,anchor=CENTER)
+player1_score.place(relx=0.1,rely=0.6,anchor=CENTER)
+player2_score.place(relx=0.9,rely=0.6,anchor=CENTER)
+lbl_random_dice.place(relx=0.5,rely=0.5,anchor=CENTER)
+root.mainloop()
