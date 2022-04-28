@@ -1,0 +1,2 @@
+This is an sample text file for Openpad.
+This will be saved in C:/Program%20Files/OpenPad/sample.txt
