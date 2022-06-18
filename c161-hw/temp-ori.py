@@ -53,7 +53,7 @@ def save():
     file.write(data)
     input_file_name.delete(0,END)
     my_text.delete(1.0,END)
-    messagebpx.showinfo("Update","Success, LOL")
+    messagebox.showinfo("Update","Success, LOL")
     
 def closeWindow():
     root.destroy

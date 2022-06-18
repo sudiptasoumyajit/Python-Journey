@@ -1,49 +1,104 @@
- list=["Burger","Ice Cream"]
- class parent():
-     def __init__(self):
-         print("JOB MENU")
-     def menu(type):
-         if type=="burger":
-             print("You Can Add Following Toppings \n 1. Tomato \n 2. Cabbage \n 3. Cucumber")
-             print("You Can Select The Food Type \n 1. Veg \n 2. Non-Veg")
-         elif type=="icecream":
-             print("You Can Select Any Type \n 1. Cone \n 2. Stick \n 3. Cup")
-             print("You Can Select Any Flavour \n 1. Chocolate \n 2. Vanilla \n 3. Strawberry \n 4. Cherry")
-         else:
-             print("Enter Any type From The List \n"+list)
-     def final_amount(type,name):
-         if type=="burger" and name=="tomato":
-             print("Your Bill \n Burger With Tomato As Add: 100 Rs")
-         elif type=="burger" and name=="cabbage":
-             print("Your Bill \n Burger With Cabbage As Add: 400 Rs")
-         elif type=="burger" and name=="cucumber":
-             print("Your Bill \n Burger With Cucumber As Add: 50 Rs")
-         elif type=="icecream" and name=="chocolate":
-             print("Your Bill \n Ice Cream With Chocolate Flavour: 50 Rs")
-         elif type=="icecream" and name=="vanilla":
-             print("Your Bill \n Ice Cream With Vanilla Flavour: 20 Rs")
-         elif type=="icecream" and name=="strawberry":
-             print("Your Bill \n Ice Cream With Strawberry Flavour: 200 Rs")
-         elif type=="icecream" and name=="cheery":
-             print("Your Bill \n Ice Cream With Cheery Flavour: 10 Rs")
-         else:
-             print("Select A name Please")
- class child1(parent):
-     def __init__(self,type):
-         self.new_type=type
-     def get_menu(self):
-         parent.menu(self.new_type)
- class child2(parent):
-     def __init__(self,type,name):
-         self.new_type=type
-         self.add=name
-     def added(self):
-         parent.final_amount(self.new_type,self.add)
- pick1=child1("burger")
- pick1.get_menu()
- pick2=child2("burger","tomato")
- pick2.added()
- pick3=child1("icecream")
- pick3.get_menu()
- pick4=child2("icecream","chocolate")
- pick4.added()
+from tkinter import *
+root=Tk()
+root.title("Connecting Jobs")
+root.geometry("600x600")
+#CODEs
+label1=Label(root,text="NaN")
+label1.pack()
+button1=Button(root,text="Show Hospital Alloted",command="hireHospital")
+button1.pack()
+label2=Label(root,text="NaN")
+label2.pack()
+button2=Button(root,text="Show IT Company Alloted",command="hireIT")
+button2.pack()
+label3=Label(root,text="NaN")
+label3.pack()
+button3=Button(root,text="Show Chemical Factory Alloted",command="hireChemical")
+button3.pack()
+class parent:
+    def __init__(self):
+        print("Jobs")
+    def offer(type):
+        if type=="Hospital":
+            label1["text"]="Select Your Company: Appolo, Ceta, MRI"
+        elif type=="IT Engeneer":
+            label2["text"]="Select Your Company: ICode, Apple, Microsoft"
+        elif type=="Chemical":
+            label3["text"]="Select Your Company: IFFCO, Abbot, CiNi"
+        else:
+            print("Select")
+    def offertype(type,item):
+        if(type=="Hospital" and name=="AppoloDoc"):
+            label1["text"]="\n Applo Hiers You As Doctor"
+        elif(type=="Hospital" and name=="AppoloSur"):
+            label1["text"]="\n Applo Hiers You As Surgeon"
+        elif(type=="Hospital" and name=="AppoloNur"):
+            label1["text"]="\n Applo Hiers You As Nurse"
+        elif(type=="Hospital" and name=="CetaDoc"):
+            label1["text"]="\n Ceta Hiers You As Doctor"
+        elif(type=="Hospital" and name=="CetaSur"):
+            label1["text"]="\n Ceta Hiers You As Surgeon"
+        elif(type=="Hospital" and name=="CetaNur"):
+            label1["text"]="\n Ceta Hiers You As Nurse"
+        elif(type=="Hospital" and name=="MRIDoc"):
+            label1["text"]="\n MRI .Inc Hiers You As Doctor"
+        elif(type=="Hospital" and name=="MRISur"):
+            label1["text"]="\n MRI .Inc Hiers You As Surgeon"
+        elif(type=="Hospital" and name=="MRINur"):
+            label1["text"]="\n MRI .Inc Hiers You As Nurse"
+        elif(type=="IT Engeneer" and name=="ICodeDev"):
+            label2["text"]="\n ICode Has Hired You As Developer"
+        elif(type=="IT Engeneer" and name=="ICodeBug"):
+            label2["text"]="\n ICode Has Hired You As Bug Fixer"
+        elif(type=="IT Engeneer" and name=="MicrosoftDev"):
+            label2["text"]="\n Microsoft Has Hired You As Developer"
+        elif(type=="IT Engeneer" and name=="MicrosoftBug"):
+            label2["text"]="\n Microsoft Has Hired You As Bug Fixer"
+        elif(type=="IT Engeneer" and name=="AppleDev"):
+            label2["text"]="\n Apple Has Hired You As Developer"
+        elif(type=="IT Engeneer" and name=="AppleBug"):
+            label2["text"]="\n Apple Has Hired You As Bug Fixer"
+        elif(type=="Chemical" and name=="IFFCOWork"):
+            label2["text"]="\n IIFFCO Has Hired You As Workman"
+        elif(type=="Chemical" and name=="AbbotWork"):
+            label2["text"]="\n Abbot Has Hired You As Workman"
+        elif(type=="Chemical" and name=="CiNiWork"):
+            label2["text"]="\n CiNi Has Hired You As Workman"
+        else:
+            print("Select")
+class jobType(parent):
+    def __init__(self,type):
+        self.new_type=type
+    def get_menu(self):
+        parent.menu(self.new_type)
+class jobCategory(parent):
+    def __init__(self,type,item):
+        self.new_type=type
+        self.add=name
+    def added(self):
+        parent.result(self.new_type,self.add)
+def  hireHospital():
+    name1=jobType("Hospital")
+    name1.result()
+    name2=jobCategory("Hospital","MRINur")
+    name2.result()
+label1["label"]=hireHospital()
+def  hireIT():
+    name1=jobType("IT Engeneer")
+    name1.result()
+    name2=jobCategory("IT Engeneer","AppleBug")
+    name2.result()
+label2["label"]=hireIT()
+def  hireChemical():
+    name1=jobType("Chemical")
+    name1.result()
+    name2=jobCategory("Chemical","CiNiWork")
+    name2.result()
+label3["label"]=hireChemical()
+lbl1=Label(root,text=hireHospital)
+lbl1.pack()
+lbl2=Label(root,text=hireIT)
+lbl2.pack
+lbl3=Label(root,text=hireChemical)
+lbl3.pack()
+root.mainloop()
